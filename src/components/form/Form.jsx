@@ -1,9 +1,10 @@
 import React from "react";
+import "./Form.css";
 
 const Form = ({ value, onChange, onSubmit }) => {
   return (
     <>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className="form">
         <input
           type="text"
           placeholder="search any user of your choice"

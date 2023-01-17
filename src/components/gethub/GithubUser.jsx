@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Form from "./../form/Form";
 import User from "./../user/User";
+import "./GithubUser.css";
 
 const GitUser = () => {
   const [user, setUser] = useState({});
@@ -34,10 +35,10 @@ const GitUser = () => {
     setSearch("");
   };
   return (
-    <>
+    <div className="container">
       <Form value={search} onChange={handleChange} onSubmit={handleSubmit} />
       <User user={user} />
-    </>
+    </div>
   );
 };
 
