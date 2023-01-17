@@ -1,9 +1,9 @@
 import React from "react";
 
-const Form = ({ value, onchange }) => {
+const Form = ({ value, onchange, onSubmit }) => {
   return (
     <>
-      <form action="">
+      <form onSubmit={onSubmit}>
         <input
           type="text"
           placeholder="search any user of your choice"

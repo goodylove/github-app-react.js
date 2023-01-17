@@ -8,7 +8,7 @@ const GitUser = () => {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(true);
 
-  const API_URL = `https://api.github.com/users/${search}`;
+  const API_URL = `https://api.github.com/users/${query}`;
 
   const getUser = async () => {
     try {
@@ -22,14 +22,19 @@ const GitUser = () => {
   };
   useEffect(() => {
     getUser();
-  }, []);
+  }, [query]);
 
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setQuery(search);
+  };
   return (
     <>
-      <Form value={search} onChange={handleChange} />
+      <Form value={search} onChange={handleChange} onSubmit={handleSubmit} />
     </>
   );
 };
