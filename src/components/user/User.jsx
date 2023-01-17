@@ -1,4 +1,5 @@
 import React from "react";
+import "./User.css";
 
 const User = ({ user }) => {
   const { login, avatar_url, bio, following, followers } = user;
@@ -8,8 +9,8 @@ const User = ({ user }) => {
       <span>{login}</span>
       <span>{bio}</span>
       <div>
-        <span>{followers}</span>
-        <span>{following}</span>
+        <span> followers{followers}</span>
+        <span> following{following}</span>
       </div>
     </div>
   );
