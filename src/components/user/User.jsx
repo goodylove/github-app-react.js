@@ -1,4 +1,5 @@
 import React from "react";
+import { SlUserFollowing } from "react-icons/sl";
 import "./User.css";
 
 const User = ({ user }) => {
@@ -8,8 +9,12 @@ const User = ({ user }) => {
       <img src={avatar_url} alt="" />
       <span>{login}</span>
       <span>{bio}</span>
-      <div>
-        <span> followers{followers}</span>
+      <div className="follow-container">
+        <span>
+          <SlUserFollowing />
+          following
+          {followers}
+        </span>
         <span> following{following}</span>
       </div>
     </div>
