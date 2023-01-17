@@ -1,6 +1,6 @@
 import React from "react";
 
-const Form = ({ value, onchange, onSubmit }) => {
+const Form = ({ value, onChange, onSubmit }) => {
   return (
     <>
       <form onSubmit={onSubmit}>
@@ -8,7 +8,7 @@ const Form = ({ value, onchange, onSubmit }) => {
           type="text"
           placeholder="search any user of your choice"
           value={value}
-          onChange={onchange}
+          onChange={onChange}
         />
         <button type="submit">search</button>
       </form>

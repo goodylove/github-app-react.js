@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-
 import Form from "./../form/Form";
+import User from "./../user/User";
 
 const GitUser = () => {
   const [user, setUser] = useState({});
-  const [search, setSearch] = useState("goodylove");
-  const [query, setQuery] = useState("");
+  const [search, setSearch] = useState("");
+  const [query, setQuery] = useState("goodylove");
   const [loading, setLoading] = useState(true);
 
   const API_URL = `https://api.github.com/users/${query}`;
@@ -14,7 +14,7 @@ const GitUser = () => {
     try {
       const response = await fetch(API_URL);
       const data = await response.json();
-      // console.log(data);
+      console.log(data);
       setUser(data);
     } catch (error) {
       console.error(error);
@@ -31,10 +31,12 @@ const GitUser = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setQuery(search);
+    setSearch("");
   };
   return (
     <>
       <Form value={search} onChange={handleChange} onSubmit={handleSubmit} />
+      <User user={user} />
     </>
   );
 };
