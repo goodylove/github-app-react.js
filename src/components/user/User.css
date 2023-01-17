@@ -5,6 +5,7 @@
     align-items: center;
     padding: 20px;
     color: whitesmoke;
+    font-size: 20PX;
 }
 .user span{
     padding: 5px;
@@ -22,5 +23,6 @@
 
 }
 .follow-container span{
-    padding: 6px;
+    padding: 0 3px;
+    font-size: 15px;
 }

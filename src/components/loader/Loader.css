@@ -97,13 +97,14 @@
         backface-visibility: hidden;
         transform-origin: 0 0;
         /* see note above */
-        left: 100px;
+        left: 60px;
+        top:100px
 
     }
 
     .loadingio-spinner-dual-ball-5kcljju2tak {
-        width: 500px;
-        height: 500px;
+        width: 300px;
+        height: 300px;
         display: inline-block;
         overflow: hidden;
         background: #ffffff;

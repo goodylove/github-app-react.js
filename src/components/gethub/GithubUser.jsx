@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Form from "./../form/Form";
 import User from "./../user/User";
+import Loading from "../loader/Loader";
 import "./GithubUser.css";
 
 const GitUser = () => {
@@ -12,9 +13,11 @@ const GitUser = () => {
   const API_URL = `https://api.github.com/users/${query}`;
 
   const getUser = async () => {
+    setLoading(true);
     try {
       const response = await fetch(API_URL);
       const data = await response.json();
+      setLoading(false);
       console.log(data);
       setUser(data);
     } catch (error) {
@@ -37,7 +40,7 @@ const GitUser = () => {
   return (
     <div className="container">
       <Form value={search} onChange={handleChange} onSubmit={handleSubmit} />
-      <User user={user} />
+      {loading ? <Loading /> : <User user={user} />}
     </div>
   );
 };
