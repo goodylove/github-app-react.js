@@ -1,9 +1,11 @@
+import React from "react";
+import GitUser from "../gethub/GithubUser";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <h2>Hello World</h2>
+      <GitUser />
     </div>
   );
 }
